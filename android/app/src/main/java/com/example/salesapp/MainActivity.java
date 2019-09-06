@@ -1,4 +1,4 @@
-package com.example.salesapp;
+package com.cale.appsales;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

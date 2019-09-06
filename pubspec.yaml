@@ -28,6 +28,12 @@ dependencies:
   fancy_bottom_navigation: ^0.3.2
   flutter_icons: ^0.1.4
   division: ^0.6.1
+  flutter_launcher_icons: ^0.7.3
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
 
 dev_dependencies:
   flutter_test:

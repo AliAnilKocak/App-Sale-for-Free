@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'App Sales & Free App',
+      title: 'App Sale for Free',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           TabData(iconData: Feather.getIconData("info"), title: "About")
         ],
-        initialSelection: 1,
+        initialSelection: 0,
         key: bottomNavigationKey,
         onTabChangedListener: (position) {
           setState(() {

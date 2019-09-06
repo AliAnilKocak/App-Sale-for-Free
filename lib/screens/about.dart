@@ -91,7 +91,7 @@ class Settings extends StatelessWidget {
           SettingsItem(Icons.verified_user, '#F468B7', 'Version', '1.0.0'),
           GestureDetector(
             onTap: () async {
-                print("tıklandı");
+              print("tıklandı");
               // launch(
               //     "mailto:salesapp@coolflutter.com?subject=App Sales & Free App Feedback&body=");
             },
@@ -103,14 +103,6 @@ class Settings extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 
   final StyleClass settingsStyle = StyleClass();
@@ -134,50 +126,50 @@ class _SettingsItemState extends State<SettingsItem> {
   @override
   Widget build(BuildContext context) {
     return Division(
-        
-    style: settingsItemStyle
-      ..elevation(pressed ? 0 : 50, color: Colors.grey)
-      ..scale(pressed ? 0.95 : 1.0),
-    gesture: GestureClass()
-      ..onTapDown((details) {
-        launch("https://play.google.com/store/apps/details?id=com.cale.appsales");
-      } )
-      ..onTapUp((details) =>  print("asdasd"))
-      ..onTapCancel(() =>  print("asdasd")),
-    child: Row(
-      children: <Widget>[
-        Division(
-          style: StyleClass()
-            ..backgroundColor(widget.iconBgColor)
-            ..add(settingsItemIconStyle),
-          child: Icon(
-            widget.icon,
-            color: Colors.white,
-            size: 20,
-          ),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        style: settingsItemStyle
+          ..elevation(pressed ? 0 : 50, color: Colors.grey)
+          ..scale(pressed ? 0.95 : 1.0),
+        gesture: GestureClass()
+          ..onTapDown((details) {
+            launch(
+                "https://play.google.com/store/apps/details?id=com.cale.appsales");
+          })
+          ..onTapUp((details) => print("asdasd"))
+          ..onTapCancel(() => print("asdasd")),
+        child: Row(
           children: <Widget>[
-            Text(
-              widget.title,
-              style: itemTitleTextStyle,
+            Division(
+              style: StyleClass()
+                ..backgroundColor(widget.iconBgColor)
+                ..add(settingsItemIconStyle),
+              child: Icon(
+                widget.icon,
+                color: Colors.white,
+                size: 20,
+              ),
             ),
             SizedBox(
-              height: 5,
+              width: 10,
             ),
-            Text(
-              widget.description,
-              style: itemDescriptionTextStyle,
-            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  widget.title,
+                  style: itemTitleTextStyle,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  widget.description,
+                  style: itemDescriptionTextStyle,
+                ),
+              ],
+            )
           ],
-        )
-      ],
-    ));
+        ));
   }
 
   final StyleClass settingsItemStyle = StyleClass()
